@@ -6,6 +6,7 @@ require('dotenv').config();                   // Variables d'environnement
 // Import des routes
 const categoriesRouter = require('./routes/categories');
 const artisansRouter = require('./routes/artisans');
+const emailRouter = require('./routes/email');
 
 // Import des modèles
 require('./models/index');
@@ -19,6 +20,7 @@ app.use(express.json());
 // Routes
 app.use('/api/categories', categoriesRouter);
 app.use('/api/artisans', artisansRouter);
+app.use('/api/email', emailRouter);
 
 // Lancement du serveur + test connexion BDD
 sequelize.authenticate()

@@ -23,3 +23,6 @@ export const getArtisan = (id) => api.get(`/artisans/${id}`);
 
 // Rechercher un artisan par nom
 export const searchArtisans = (q) => api.get(`/artisans/search?q=${q}`);
+
+// Envoyer un email
+export const sendEmail = (data) => api.post('/email', data);

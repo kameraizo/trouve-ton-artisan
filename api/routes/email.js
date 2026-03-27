@@ -14,6 +14,7 @@ const transporter = nodemailer.createTransport({
 // POST envoyer un email
 router.post('/', async (req, res) => {
     const { nom, email, objet, message, destinataire } = req.body;
+    console.log('Données reçues :', req.body); 
 
     try {
         await transporter.sendMail({
