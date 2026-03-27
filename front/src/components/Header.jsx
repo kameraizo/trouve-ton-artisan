@@ -1,10 +1,16 @@
-import { useState, useEffect } from "react"             // importation des hooks
-import { Link } from "react-router-dom"                 // importation de Link
-import { getCategories } from "../services/api"        // importation de la fonction getCategories
+import { useState, useEffect } from "react"             // importation de useState
+import { getCategories } from "../services/api"         // importation de la fonction getCategories
+import {Link, useNavigate} from "react-router-dom"    //    importation de Link
 
 function Header() {
-    const [categories, setCategories] = useState([])                  // state pour stocker les catégories
-
+    const [categories, setCategories] = useState([])  // state pour stocker les catégories
+    const navigate = useNavigate()
+    const [recherche, setRecherche] = useState('')    // state pour stocker la recherche              
+    const handleRecherche = (e) => {                          // fonction de recherche
+        if (e.key === 'Enter') {                          // si la touche entre est appuyée
+            navigate(`/recherche?q=${recherche}`)             // rediriger vers la liste des artisans
+        }    
+    }    
     useEffect(() => {
         getCategories().then((response) => {                    // appel de la fonction getCategories
             setCategories(response.data)                       // mise a jour du state
@@ -26,7 +32,13 @@ function Header() {
                     ))}
                 </ul>
             </nav> 
-            <input type="search" placeholder="Rechercher un artisan" />            {/* input de recherche */}
+            <input
+            type="search" 
+            placeholder="Rechercher un artisan"           
+            value={recherche}
+            onChange={(e) => setRecherche(e.target.value)}
+            onKeyDown={handleRecherche}
+            />
         </header>
        
     )}

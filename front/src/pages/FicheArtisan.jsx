@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { getArtisan } from '../services/api'
+import { getArtisan } from '../services/api'    
 import Etoiles from '../components/Etoiles'
 
 
 
-function FicheArtisan() {
+function FicheArtisan() {       // fonction FicheArtisan
     const { id } = useParams()
     const [artisan, setArtisan] = useState(null)
     
@@ -17,7 +17,7 @@ function FicheArtisan() {
     }, [id])
 
 
-    return (
+    return (                        // retourne la fiche de l'artisan
         <div className="container">
             <h2>{artisan?.nom}</h2>
             <Etoiles note={artisan?.note} />
