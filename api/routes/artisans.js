@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const { Artisan, Specialite, Categorie } = require('../models/index');
-const { Op } = require('sequelize');
+const express = require('express');         // Framework Express
+const router = express.Router();                // Routeur Express
+const { Artisan, Specialite, Categorie } = require('../models/index');   // Modèle Artisan
+const { Op } = require('sequelize');             // Opérateurs SQL
 
 // GET tous les artisans
 router.get('/', async (req, res) => {

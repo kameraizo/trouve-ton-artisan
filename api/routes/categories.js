@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const { Categorie } = require('../models/index');
+const express = require('express');   // Framework Express
+const router = express.Router();      // Routeur Express
+const { Categorie } = require('../models/index');     // Modèle Categorie
 
 // GET toutes les catégories
 router.get('/', async (req, res) => {

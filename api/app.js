@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const sequelize = require('./config/database');
-require('dotenv').config();
+const express = require('express');     // Framework Express
+const cors = require('cors');           // Middleware CORS
+const sequelize = require('./config/database');      // Connexion BDD
+require('dotenv').config();                   // Variables d'environnement
 
 // Import des routes
 const categoriesRouter = require('./routes/categories');
@@ -28,6 +28,6 @@ sequelize.authenticate()
       console.log(`Serveur démarré sur le port ${process.env.PORT}`);
     });
   })
-  .catch(err => {
-    console.error('Erreur de connexion :', err);
+  .catch(err => {                                     // Gestion des erreurs
+    console.error('Erreur de connexion :', err);    // Affichage de l'erreur
   });

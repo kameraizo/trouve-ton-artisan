@@ -1,0 +1,17 @@
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Variables couleurs du CDC
+$color-primary: #0074c7;
+$color-dark: #00497c;
+$color-text: #384050;
+$color-red: #cd2c2e;
+$color-green: #82b864;
+$color-light: #f1f8fc;
+
+// Styles globaux
+body {
+  font-family: 'Graphik', sans-serif;
+  color: $color-text;
+  background-color: $color-light;
+}
