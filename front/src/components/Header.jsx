@@ -27,9 +27,6 @@ return (
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav me-auto">
-                        <li className="nav-item">
-                            <Link className="nav-link text-white" to="/artisans">Tous les artisans</Link>
-                        </li>
                         {categories.map((categorie) => (
                             <li className="nav-item" key={categorie.id}>
                                 <Link className="nav-link text-white fw-bold" to={`/categorie/${categorie.id}`}>{categorie.nom}</Link>

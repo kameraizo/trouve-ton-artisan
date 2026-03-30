@@ -3,7 +3,10 @@ import axios from 'axios';
 const API_URL = 'http://localhost:3000/api';
 
 const api = axios.create({
-  baseURL: API_URL
+  baseURL: API_URL,
+    headers: {
+    'x-api-key': import.meta.env.VITE_API_KEY
+  }
 });
 
 // Récupérer toutes les catégories

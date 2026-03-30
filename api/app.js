@@ -2,6 +2,7 @@ const express = require('express');     // Framework Express
 const cors = require('cors');           // Middleware CORS
 const sequelize = require('./config/database');      // Connexion BDD
 require('dotenv').config();                   // Variables d'environnement
+const verifyApiKey = require('./middleware/auth');
 
 // Import des routes
 const categoriesRouter = require('./routes/categories');
@@ -16,6 +17,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(verifyApiKey);
 
 // Routes
 app.use('/api/categories', categoriesRouter);
