@@ -34,13 +34,18 @@ function FicheArtisan() {
 
     return (
         <div className="container">
+            <div className='fiche'>
             <h2>{artisan?.nom}</h2>
             <Etoiles note={artisan?.note} />
             <p>{artisan?.Specialite?.nom}</p>
             <p>{artisan?.ville}</p>
             <p>{artisan?.a_propos}</p>
             {artisan?.site_web && <a href={artisan.site_web}>{artisan.site_web}</a>}
+            
             <form onSubmit={handleSubmit}>
+            
+
+            
                 <input
                     type="text"
                     placeholder="Votre nom"
@@ -66,6 +71,7 @@ function FicheArtisan() {
                 ></textarea>
                 <button type="submit">Envoyer</button>
             </form>
+            </div>
         </div>
     )
 }

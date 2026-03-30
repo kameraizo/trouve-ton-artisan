@@ -13,7 +13,7 @@ function Accueil() {
     return <div className="container">
     <section>
         <h2>Comment trouver un artisan</h2>
-        <div>
+        <div className="etapes">
             <div>
                 <span>1</span>
                 <p>Choisir la categorie d'artisan</p>
@@ -35,7 +35,7 @@ function Accueil() {
     </section>
     <section>
         <h2>les artisans du mois</h2>
-        <div>
+        <div className="cards">
             {artisansTop.map((artisan) => (
                 <CardArtisan key={artisan.id} artisan={artisan} />
             ))}
