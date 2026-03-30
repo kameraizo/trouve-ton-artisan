@@ -17,29 +17,37 @@ function Header() {
         })
     }, [])
 
-    return (                                                    // retourne le header
-        <header className="container">                             
-            <Link to="/">
-                <h1>Artisans</h1>
-            </Link>
-            <nav>
-                <Link to="/artisans">Tous les artisans</Link>         {/* lien vers la liste des artisans*/}
-                <ul>
-                    {categories.map((categorie) => (                    // boucle sur les catégories
-                        <li key={categorie.id}>
-                            <Link to={`/categorie/${categorie.id}`}>{categorie.nom}</Link>     
+return (
+    <header>
+        <nav className="navbar navbar-expand-lg" style={{backgroundColor: '#00497c'}}>
+            <div className="container">
+                <Link className="navbar-brand text-white fw-bold" to="/">Artisans</Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav me-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link text-white" to="/artisans">Tous les artisans</Link>
                         </li>
-                    ))}
-                </ul>
-            </nav> 
-            <input
-            type="search" 
-            placeholder="Rechercher un artisan"           
-            value={recherche}
-            onChange={(e) => setRecherche(e.target.value)}
-            onKeyDown={handleRecherche}
-            />
-        </header>
-       
-    )}
+                        {categories.map((categorie) => (
+                            <li className="nav-item" key={categorie.id}>
+                                <Link className="nav-link text-white fw-bold" to={`/categorie/${categorie.id}`}>{categorie.nom}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <input
+                        type="search"
+                        className="form-control w-auto"
+                        placeholder="Rechercher un artisan"
+                        value={recherche}
+                        onChange={(e) => setRecherche(e.target.value)}
+                        onKeyDown={handleRecherche}
+                    />
+                </div>
+            </div>
+        </nav>
+    </header>
+)
+}
     export default Header
