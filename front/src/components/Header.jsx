@@ -21,7 +21,7 @@ return (
     <header>
         <nav className="navbar navbar-expand-lg" style={{backgroundColor: '#00497c'}}>
             <div className="container">
-                <Link className="navbar-brand text-white fw-bold" to="/">Artisans</Link>
+                <Link className="navbar-brand" to="/"><img src="/Logo.png" alt="Trouve ton artisan" height="60"/></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span className="navbar-toggler-icon"></span>
                 </button>
