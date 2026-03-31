@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer className="container">
             <nav>
-            <Link to="/legal">Mentions legales</Link>                       {/* lien vers les mentions legales */}
+            <Link to="/legal/mentions-legales">Mentions legales</Link>                       {/* lien vers les mentions legales */}
             <Link to ="/legal/donnees-personnelles">Données personnelles</Link>          {/* lien vers les donnees personnelles */}
             <Link to ="/legal/accessibilite">Accessibilité</Link>                     {/* lien vers l'accessibilite */}
             <Link to ="/legal/cookies">Cookies</Link>                               {/* lien vers les cookies */}
